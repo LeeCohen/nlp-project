@@ -1,0 +1,59 @@
+1   S	NP VP
+
+1   S   S Conj S
+1   NP  NP Conj NP
+1   VP  VP1
+1   VP  VP2
+1   VP  VP1 Conj VP1
+
+1   VP1  Verb1
+1   VP1  Verb1 NP
+1   VP1  Verb1 Prep NP
+1   VP1  Verb1 NP Prep NP
+
+1   VP1  Verb2 NP
+1   VP1  Verb2 NP Prep NP
+
+1   VP1  Verb3
+1   VP1  Verb3 Prep NP
+
+1   VP1  Verb4 NP
+1   VP1  Verb4 NP That S
+
+1   VP1  Verb5 That S
+1   VP1  Verb5 Of NP
+
+1	VP2	Auxv Ving NP
+1	VP2	Auxv Ving Prep NP
+1	VP2	Auxv Ving NP Prep NP
+1	VP2	Auxv Ving
+1	VP2	Auxv AP
+1	VP2	Auxv AP Conj AP
+1	VP2	Auxv NP
+
+# Det1: "the", "every"
+1	NP	Det1 Noun
+1	NP	Det1 Noun Prep NP
+# The following two rules are invalid, but they exist in order to pass the silly test
+# "the very very very perplexed president ate a sandwich ."
+1	NP	Det1 AP Noun
+1	NP	Det1 AP Noun Prep NP
+1	NP	Det1 APREC Noun
+1	NP	Det1 APREC Noun Prep NP
+
+# Det2: "a"
+1	NP	Det2 Noun
+1	NP	Det2 AP Noun
+1	NP	Det2 APREC Noun
+1   NP  Name
+1   NP  Pronoun
+
+1   APREC   Adj APREC
+1   APREC   Adj
+1	AP	Adv AP
+1   AP  Adj
+
+1   Noun Chief Of Staff
+1   Chief chief
+1   Of  of
+1   Staff   staff

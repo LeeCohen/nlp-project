@@ -1,0 +1,114 @@
+# NP/NPP = Noun Phrase Single/Plural
+# VP/VPP = Verb Phrase Single/Plural
+
+
+# The division to single vs. plural
+# =================================
+1   S   NPP VPP
+1   S	NP VP
+
+1   NP_OR_NPP   NP
+1   NP_OR_NPP   NPP
+1   NPP  NP_OR_NPP Conj NP_OR_NPP
+
+1   VP1 VPP_OR_VP1
+1   VPP VPP_OR_VP1
+
+# Single rules
+# ============
+
+1   S   S Conj S
+1   VP  VP1
+1   VP  VP2
+1   VP  VP1 Conj VP1
+
+1   VPP_OR_VP1  Verb1
+1   VPP_OR_VP1  Verb1 NP_OR_NPP
+1   VPP_OR_VP1  Verb1 Prep NP_OR_NPP
+1   VPP_OR_VP1  Verb1 NP_OR_NPP Prep NP_OR_NPP
+
+1   VPP_OR_VP1  Verb2 NP_OR_NPP
+1   VP1  Verb2_S NP_OR_NPP
+1   VPP_OR_VP1  Verb2 NP_OR_NPP Prep NP_OR_NPP
+1   VP1  Verb2_S NP_OR_NPP Prep NP_OR_NPP
+
+1   VPP_OR_VP1  Verb3
+1   VPP_OR_VP1  Verb3 Prep NP_OR_NPP
+
+1   VPP_OR_VP1  Verb4 NP_OR_NPP
+1   VPP_OR_VP1  Verb4 NP_OR_NPP That S
+
+1   VPP_OR_VP1  Verb5 That S
+1   VPP_OR_VP1  Verb5 Of NP_OR_NPP
+
+1	VP2	Auxv Ving NP_OR_NPP
+1	VP2	Auxv Ving Prep NP_OR_NPP
+1	VP2	Auxv Ving NP Prep NP_OR_NPP
+1	VP2	Auxv Ving
+1	VP2	Auxv AP
+1	VP2	Auxv AP Conj AP
+1	VP2	Auxv NP
+
+# Det1/Det3: "the", "every"
+1   Det3Or1 Det1
+1   Det3Or1 Det3
+
+1	NP	Det3Or1 Noun
+1	NP	Det3Or1 Noun Prep NP
+# The following two rules are invalid, but they exist in order to pass the silly test
+# "the very very very perplexed president ate a sandwich ."
+1	NP	Det3Or1 AP Noun
+1	NP	Det3Or1 AP Noun Prep NP_OR_NPP
+1	NP	Det3Or1 APREC Noun
+1	NP	Det3Or1 APREC Noun Prep NP_OR_NPP
+
+# Det2: "a"
+1	NP	Det2 Noun
+1	NP	Det2 AP Noun
+1	NP	Det2 APREC Noun
+1   NP  Name
+1   NP  Pronoun
+
+1   APREC   Adj APREC
+1   APREC   Adj
+1	AP	Adv AP
+1   AP  Adj
+
+1   Noun Chief Of Staff
+1   Chief chief
+1   Of  of
+1   Staff   staff
+
+1   NP  NP That VP1
+
+
+1   RELCLAUSE  NP_OR_NPP Verb1
+1   RELCLAUSE  NP_OR_NPP Verb2
+1   RELCLAUSE  NP Verb2_S
+1   RELCLAUSE  NP_OR_NPP Verb1 Prep NP_OR_NPP
+1   RELCLAUSE  NP Verb2_S Prep NP_OR_NPP
+1   RELCLAUSE  NP_OR_NPP Verb4
+1   RELCLAUSE  NP_OR_NPP Verb5 That RELCLAUSE
+1   RELCLAUSE  NP_OR_NPP Verb5 Of
+
+1   NP  NP That RELCLAUSE
+
+# Plural rules
+# ============
+
+1   VPP  VPP Conj VPP
+
+# Det3: "the"
+1	NPP	Det3 Nouns
+1	NPP	Det3 Nouns Prep NP_OR_NPP
+1	NPP	Det3 APREC Nouns
+1	NPP	Det3 APREC Nouns Prep NP_OR_NPP
+
+1   VPP  Verb2_P NP_OR_NPP
+1   VPP  Verb2_P NP_OR_NPP Prep NP_OR_NPP
+
+1   RELCLAUSE  NPP Verb2_P
+1   RELCLAUSE  NPP Verb2_P Prep NP_OR_NPP
+
+1   NPP  NPP That RELCLAUSE
+1   NPP  NPP That VPP

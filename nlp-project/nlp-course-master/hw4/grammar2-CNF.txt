@@ -1,0 +1,470 @@
+# Symbols in the grammar are case-sensitive.
+# 
+# This grammar uses a convention that
+#    - terminals are lowercase          (president)
+#    - preterminals are capitalized     (Noun)
+#    - other nonterminals are all-caps  (NP)
+# 
+# This convention just makes grammars more readable to humans.  Thus:
+#
+#    - When *you* are writing grammars, you should 
+#      follow this convention unless you have a good reason not to.  
+#
+#    - But the  *program* should still work with grammars that don't
+#      follow this convention.  So how can the program reliably tell
+#      the difference between terminal and nonterminal symbols?  If
+#      there is at least one rule for rewriting a symbol, then that
+#      symbol is a nonterminalf should be rewritten.
+#######################
+
+# Rules for creating full sentences.
+
+1	ROOT	S Period
+1	ROOT	S Mark
+
+1   Period  .
+1   Mark    !
+
+# The basic grammar rules.  Here's what the abbreviations stand for:
+#    S  = sentence
+#    SC  = sentence with conjuction
+#    NP = noun phrase
+#    VP = verb phrase
+#    PP = prepositional phrase
+#    AP = adjective phrase
+#    Pvoice = passive voice
+#    Ving = present proggresive verb
+#    Det = determiner (sometimes called "article")
+#    Prep = preposition
+#    Adj = adjective
+#    Adv = adverb
+#    Auxv = auxiliary verb ("is")
+#    Conj = conjunction
+#    Pronoun = pronoun
+
+# Automatic CNF grammar generator should paste the grammar between PASTE START end PASTE END
+# PASTE START
+1.0	NP_15	Adj NP_16
+1	NP_14	Adj Noun
+1	NP_25	Conj Name
+1	NP_17	Prep NP
+1	NP_62	Conj Pronoun
+1	NP_63	Conj Pronoun
+1	NP_60	Conj Pronoun
+1	VP2_60	Prep Pronoun
+1	NP_19	Adj Noun
+1	NP_18	Adj Noun
+1	VP_9	Conj Verb3
+1.0	VP1_57	Name VP1_58
+1	VP1_56	Prep Name
+1.0	VP1_55	Pronoun VP1_56
+1	VP1_54	Prep Pronoun
+1.0	VP1_53	Name VP1_54
+1	VP1_52	Of Pronoun
+1	VP1_51	That S
+1.0	VP1_50	Pronoun VP1_51
+1	VP_5	Conj Verb1
+1.0	VP1_59	Pronoun VP1_60
+1	VP1_58	Prep Pronoun
+1.0	NP_57	Adj NP_58
+1	NP_56	Prep Pronoun
+1.0	NP_55	Noun NP_56
+1	VP_4	Conj Verb1
+1	NP_53	Prep Pronoun
+1.0	NP_52	Noun NP_53
+1.0	NP_51	APREC NP_52
+1	NP_50	Prep Pronoun
+1.0	Of	of
+1	NP_59	Prep Pronoun
+1	VP_2	Conj VP1
+1	NP_28	Prep Name
+1	VP_1	Conj VP1
+1	NP_26	Conj Name
+1	VP1_9	That S
+1	VP1_8	That S
+1	VP2_18	Conj Adj
+1	VP2_19	Ving Name
+1	VP1_3	Prep NP
+1.0	VP1_2	NP VP1_3
+1	VP1_1	Prep NP
+1.0	VP2_15	Adj VP2_16
+1	VP2_12	Conj Adj
+1.0	VP2_13	Adj VP2_14
+1	VP2_10	Conj AP
+1.0	VP2_11	AP VP2_12
+1.0	VP1_22	Name VP1_23
+1	VP1_23	Prep Name
+1.0	VP1_20	NP VP1_21
+1	VP1_21	Prep Name
+1	VP1_26	That S
+1	VP1_27	Of Name
+1	VP1_24	Prep Name
+1.0	VP1_25	Name VP1_26
+1	NP_22	Prep NP
+1.0	VP1_28	Name VP1_29
+1	VP1_29	Prep Name
+1	VP2_14	Conj Adj
+1	NP_23	Adj Noun
+1	NP_40	Prep Name
+1	NP_41	Conj Name
+1	NP_42	Conj Name
+1	NP_43	Conj NP
+1	NP_44	Conj Pronoun
+1.0	NP_20	Adj NP_21
+1.0	NP_46	Noun NP_47
+1	NP_47	Prep Pronoun
+1.0	NP_48	AP NP_49
+1.0	VP1_7	NP VP1_8
+1.0	NP_21	Noun NP_22
+1	VP1_6	Prep NP
+1	VP1_5	Prep NP
+1.0	VP1_4	NP VP1_5
+1	NP_61	Conj Name
+1.0	APREC	Adj APREC
+1.0	APREC	Adj Adj
+1	Noun_1	Of Staff
+1	VP1_31	Prep Name
+1.0	VP1_30	Name VP1_31
+1	VP1_33	Prep Name
+1.0	VP1_32	Name VP1_33
+1	VP1_35	Prep Name
+1.0	VP1_34	Name VP1_35
+1.0	VP1_37	Pronoun VP1_38
+1	VP1_36	Prep Pronoun
+1.0	VP1_39	NP VP1_40
+1	VP1_38	Prep NP
+1.0	NP_29	AP NP_30
+1	VP_7	Conj VP1
+1	VP2_8	Conj AP
+1.0	VP2_9	Adj VP2_10
+1.0	VP2_4	Ving VP2_5
+1.0	VP2_5	NP VP2_6
+1	VP2_6	Prep NP
+1.0	VP2_7	AP VP2_8
+1.0	NP_27	Noun NP_28
+1	VP2_1	Ving NP
+1.0	VP2_2	Ving VP2_3
+1	VP2_3	Prep NP
+1.0	NP_35	Adj NP_36
+1	NP_34	Prep Name
+1.0	S	NP VP
+1.0	S	S S_1
+1.0	S	NP VP1
+1.0	S	NP VP2
+1.0	S	NP Verb1
+1.0	S	NP Verb3
+1.0	S	Name VP
+1.0	S	Name VP1
+1.0	S	Name VP2
+1.0	S	Name Verb1
+1.0	S	Name Verb3
+1.0	S	Pronoun VP
+1.0	S	Pronoun VP1
+1.0	S	Pronoun VP2
+1.0	S	Pronoun Verb1
+1.0	S	Pronoun Verb3
+1.0	NP_36	Noun NP_37
+1	NP_31	Prep Name
+1.0	NP_30	Noun NP_31
+1.0	NP_33	Noun NP_34
+1.0	NP_32	APREC NP_33
+1	VP_6	Conj Verb1
+1.0	NP_38	Adj NP_39
+1.0	VP2_38	Ving VP2_39
+1	VP2_39	Prep Pronoun
+1	VP2_30	Prep Name
+1.0	VP2_31	Ving VP2_32
+1.0	VP2_32	Name VP2_33
+1	VP2_33	Prep Name
+1.0	VP2_34	Ving VP2_35
+1.0	VP2_35	Name VP2_36
+1	VP2_36	Prep Name
+1	VP2_37	Ving Pronoun
+1.0	Staff	staff
+1	S_1	Conj S
+1.0	NP_54	Adj NP_55
+1	NP_24	Conj NP
+1	VP1_68	Prep Pronoun
+1	VP_8	Conj Verb3
+1	VP1_66	Prep Pronoun
+1.0	VP1_67	Pronoun VP1_68
+1	VP1_64	Prep Pronoun
+1.0	VP1_65	Pronoun VP1_66
+1	VP1_62	Prep Pronoun
+1.0	VP1_63	Pronoun VP1_64
+1	VP1_60	Prep Name
+1.0	VP1_61	Pronoun VP1_62
+1	VP2_27	Prep Name
+1.0	VP2_26	NP VP2_27
+1.0	VP2_25	Ving VP2_26
+1	VP2_24	Prep NP
+1.0	VP2_23	Name VP2_24
+1.0	VP2_22	Ving VP2_23
+1	VP2_21	Prep Name
+1.0	VP2_20	Ving VP2_21
+1.0	VP2_29	Name VP2_30
+1.0	VP2_28	Ving VP2_29
+1.0	NP_39	Noun NP_40
+1	VP1_19	Prep NP
+1.0	VP1_18	Name VP1_19
+1	VP_3	Conj Verb1
+1.0	NP_49	Noun NP_50
+1	VP1_13	Prep NP
+1.0	VP1_12	Name VP1_13
+1	VP1_11	Prep Name
+1	VP1_10	Of NP
+1	VP1_17	Prep Name
+1.0	VP1_16	Name VP1_17
+1	VP1_15	Prep Name
+1.0	VP1_14	NP VP1_15
+1.0	Noun	Chief Noun_1
+1.0	VP2_52	Ving VP2_53
+1.0	VP2_53	Pronoun VP2_54
+1.0	VP2_50	Name VP2_51
+1	VP2_51	Prep Pronoun
+1.0	VP2_46	Ving VP2_47
+1	VP2_57	Prep Pronoun
+1	VP2_54	Prep Name
+1.0	VP2_55	Ving VP2_56
+1.0	NP	NP NP_1
+1.0	NP	Det1 Noun
+1.0	NP	Det1 NP_2
+1.0	NP	Det1 NP_4
+1.0	NP	Det1 NP_5
+1.0	NP	Det1 NP_8
+1.0	NP	Det1 NP_9
+1.0	NP	Det2 Noun
+1.0	NP	Det2 NP_12
+1.0	NP	Det2 NP_13
+1.0	NP	Det1 NP_14
+1.0	NP	Det1 NP_15
+1.0	NP	Det2 NP_18
+1.0	NP	Det1 NP_19
+1.0	NP	Det1 NP_20
+1.0	NP	Det2 NP_23
+1.0	NP	Name NP_24
+1.0	NP	NP NP_25
+1.0	NP	Name NP_26
+1.0	NP	Det1 NP_27
+1.0	NP	Det1 NP_29
+1.0	NP	Det1 NP_32
+1.0	NP	Det1 NP_35
+1.0	NP	Det1 NP_38
+1.0	NP	Name NP_41
+1.0	NP	Name NP_42
+1.0	NP	Pronoun NP_43
+1.0	NP	NP NP_44
+1.0	NP	Pronoun NP_45
+1.0	NP	Det1 NP_46
+1.0	NP	Det1 NP_48
+1.0	NP	Det1 NP_51
+1.0	NP	Det1 NP_54
+1.0	NP	Det1 NP_57
+1.0	NP	Name NP_60
+1.0	NP	Pronoun NP_61
+1.0	NP	Pronoun NP_62
+1.0	NP	Pronoun NP_63
+1.0	VP2_58	Ving VP2_59
+1.0	VP2_59	Pronoun VP2_60
+1	VP2_16	Conj Adj
+1	VP1_48	Prep Pronoun
+1	VP1_49	Prep Pronoun
+1	VP1_40	Prep Pronoun
+1.0	VP1_41	Pronoun VP1_42
+1	VP1_42	Prep Pronoun
+1.0	VP1_43	Pronoun VP1_44
+1	VP1_44	Prep NP
+1.0	VP1_45	NP VP1_46
+1	VP1_46	Prep Pronoun
+1.0	VP1_47	Pronoun VP1_48
+1.0	VP2_41	Pronoun VP2_42
+1.0	VP2_40	Ving VP2_41
+1.0	VP2_43	Ving VP2_44
+1	VP2_42	Prep NP
+1	VP2_45	Prep Pronoun
+1.0	VP2_44	NP VP2_45
+1.0	VP2_47	Pronoun VP2_48
+1.0	VP2_17	Adj VP2_18
+1.0	VP2_49	Ving VP2_50
+1	VP2_48	Prep Pronoun
+1	NP_7	Prep NP
+1.0	NP_6	Noun NP_7
+1.0	NP_5	AP NP_6
+1	NP_4	AP Noun
+1	NP_3	Prep NP
+1.0	NP_2	Noun NP_3
+1	NP_1	Conj NP
+1	VP_13	Conj Verb3
+1	VP_12	Conj Verb3
+1	VP_11	Conj Verb1
+1	VP_10	Conj Verb3
+1.0	NP_9	APREC NP_10
+1	NP_8	APREC Noun
+1.0	VP1	Verb1 NP
+1.0	VP1	Verb1 VP1_1
+1.0	VP1	Verb1 VP1_2
+1.0	VP1	Verb2 NP
+1.0	VP1	Verb2 VP1_4
+1.0	VP1	Verb3 VP1_6
+1.0	VP1	Verb4 NP
+1.0	VP1	Verb4 VP1_7
+1.0	VP1	Verb5 VP1_9
+1.0	VP1	Verb5 VP1_10
+1.0	VP1	Verb1 Name
+1.0	VP1	Verb1 VP1_11
+1.0	VP1	Verb1 VP1_12
+1.0	VP1	Verb1 VP1_14
+1.0	VP1	Verb1 VP1_16
+1.0	VP1	Verb2 Name
+1.0	VP1	Verb2 VP1_18
+1.0	VP1	Verb2 VP1_20
+1.0	VP1	Verb2 VP1_22
+1.0	VP1	Verb3 VP1_24
+1.0	VP1	Verb4 Name
+1.0	VP1	Verb4 VP1_25
+1.0	VP1	Verb5 VP1_27
+1.0	VP1	Verb1 VP1_28
+1.0	VP1	Verb1 VP1_30
+1.0	VP1	Verb2 VP1_32
+1.0	VP1	Verb2 VP1_34
+1.0	VP1	Verb1 Pronoun
+1.0	VP1	Verb1 VP1_36
+1.0	VP1	Verb1 VP1_37
+1.0	VP1	Verb1 VP1_39
+1.0	VP1	Verb1 VP1_41
+1.0	VP1	Verb2 Pronoun
+1.0	VP1	Verb2 VP1_43
+1.0	VP1	Verb2 VP1_45
+1.0	VP1	Verb2 VP1_47
+1.0	VP1	Verb3 VP1_49
+1.0	VP1	Verb4 Pronoun
+1.0	VP1	Verb4 VP1_50
+1.0	VP1	Verb5 VP1_52
+1.0	VP1	Verb1 VP1_53
+1.0	VP1	Verb1 VP1_55
+1.0	VP1	Verb2 VP1_57
+1.0	VP1	Verb2 VP1_59
+1.0	VP1	Verb1 VP1_61
+1.0	VP1	Verb1 VP1_63
+1.0	VP1	Verb2 VP1_65
+1.0	VP1	Verb2 VP1_67
+1.0	VP2	Auxv VP2_1
+1.0	VP2	Auxv VP2_2
+1.0	VP2	Auxv VP2_4
+1.0	VP2	Auxv Ving
+1.0	VP2	Auxv AP
+1.0	VP2	Auxv VP2_7
+1.0	VP2	Auxv NP
+1.0	VP2	Auxv Adj
+1.0	VP2	Auxv VP2_9
+1.0	VP2	Auxv VP2_11
+1.0	VP2	Auxv VP2_13
+1.0	VP2	Auxv VP2_15
+1.0	VP2	Auxv VP2_17
+1.0	VP2	Auxv VP2_19
+1.0	VP2	Auxv VP2_20
+1.0	VP2	Auxv VP2_22
+1.0	VP2	Auxv VP2_25
+1.0	VP2	Auxv VP2_28
+1.0	VP2	Auxv Name
+1.0	VP2	Auxv VP2_31
+1.0	VP2	Auxv VP2_34
+1.0	VP2	Auxv VP2_37
+1.0	VP2	Auxv VP2_38
+1.0	VP2	Auxv VP2_40
+1.0	VP2	Auxv VP2_43
+1.0	VP2	Auxv VP2_46
+1.0	VP2	Auxv Pronoun
+1.0	VP2	Auxv VP2_49
+1.0	VP2	Auxv VP2_52
+1.0	VP2	Auxv VP2_55
+1.0	VP2	Auxv VP2_58
+1	NP_37	Prep Name
+1.0	VP	VP1 VP_1
+1.0	VP	Verb1 VP_2
+1.0	VP	VP1 VP_3
+1.0	VP	Verb1 VP_4
+1.0	VP	Verb1 VP_5
+1.0	VP	Verb1 VP_6
+1.0	VP	Verb3 VP_7
+1.0	VP	VP1 VP_8
+1.0	VP	Verb3 VP_9
+1.0	VP	Verb1 VP_10
+1.0	VP	Verb3 VP_11
+1.0	VP	Verb3 VP_12
+1.0	VP	Verb3 VP_13
+1.0	AP	Adv AP
+1.0	AP	Adv Adj
+1.0	Chief	chief
+1	NP_45	Conj Pronoun
+1.0	NP_58	Noun NP_59
+1	NP_13	APREC Noun
+1	NP_12	AP Noun
+1	NP_11	Prep NP
+1.0	NP_10	Noun NP_11
+1.0	VP2_56	Pronoun VP2_57
+1.0	NP_16	Noun NP_17
+# PASTE END
+
+# Vocabulary.  Your program can see that "ate" is a terminal
+# symbol because there exists no rule for rewriting it.
+# Any symbol that can rewrite as a terminal (or a string of 
+# terminals, like "chief of staff") is called a "preterminal."  Notice 
+# that a preterminal is a special kind of nonterminal.
+
+1	Verb1	ate
+
+1	Verb2	wanted
+1	Verb2	kissed
+1	Verb2	pickled
+
+# In principle, "wanted" should be only of type Verb2, but we need to pass the silly
+# test: "Sally and the president wanted and ate a sandwich ."
+1   Verb3   wanted
+1	Verb3	sighed
+1	Verb3	worked
+
+1	Verb4	perplexed
+
+1	Verb5	thought
+
+
+1	Ving	eating
+
+
+# Determiner that creates a specific NP. This is a NP: "the sandwich on the floor"
+1	Det1	the
+1	Det1	every
+# Determiner that creates . This is not a NP: "a sandwich on the floor"
+1	Det2	a
+
+1	Noun	president
+1	Noun	sandwich
+1	Noun	pickle
+1	Noun	proposal
+1	Noun	floor
+1	Noun	desk
+
+1   Name    Sally
+
+1   Pronoun    it
+
+1	Adj	fine
+1	Adj	delicious
+1	Adj	perplexed
+1	Adj	pickled
+1	Adj 	lazy
+
+1	Adv very
+
+1	Prep	with
+1	Prep	in
+1	Prep	on
+
+1	That	that
+
+1	Conj	and
+1	Conj	or
+
+1   Auxv    is
+
